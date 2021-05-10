@@ -1,26 +1,39 @@
-import * as React from "react"
+import * as React from "react";
+import styled from "styled-components";
 
-const pageStyles = {
-  color: "#232129",
-  padding: 96,
-  fontFamily: "-apple-system, Roboto, sans-serif, serif",
-}
+const Header = styled.header`
+  position: relative;
+  height: 25%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-const headingStyles = {
-  marginTop: 0,
-  marginBottom: 64,
-  maxWidth: 320,
-}
+  h1 {
+    font-family: "Roboto Mono", sans-serif, monospace;
+    font-size: 3rem;
+    color: paleturquoise;
+  }
+`;
 
-const IndexPage = () => {
+const About = styled.p`
+  color: whitesmoke;
+  font-size: 1.25rem;
+  font-family: "Roboto Mono", sans-serif, monospace;
+  padding: 3rem;
+`;
+
+function IndexPage() {
   return (
-    <main style={pageStyles}>
-      <title>Home Page</title>
-      <h1 style={headingStyles}>
-        addison staples
-      </h1>
-    </main>
-  )
+    <div>
+      <Header>
+        <h1>addison staples</h1>
+      </Header>
+      <About>
+        Hi! My name is Addison. I&apos;m an experienced front end developer with an infinite learner mentality. I have been coding since age twelve when I made websites for N64 games with the edgiest table layouts around. A continuing fascination with logic and numbers found me with a formal degree in mathematics, but my passion for the web and making functional, attractive things for the web has driven my work and ongoing education.
+      </About>
+    </div>
+  );
 }
 
-export default IndexPage
+export default IndexPage;
