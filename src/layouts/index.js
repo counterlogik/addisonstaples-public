@@ -5,7 +5,7 @@ import e6poster from "../assets/images/eastsixth.jpg";
 import e6mp4 from "../assets/videos/eastsixth.mp4";
 import e6webm from "../assets/videos/eastsixth.webm";
 
-const Main = styled.main`
+const Wrapper = styled.div`
   color: #232129;
   background-color: black;
   object-fit: cover;
@@ -24,6 +24,7 @@ const Video = styled.video`
   top: 0;
   left: 0;
   opacity: 0.25;
+  pointer-events: none;
 `;
 
 const VideoOverlay = styled.div`
@@ -39,17 +40,24 @@ const VideoOverlay = styled.div`
   pointer-events: none;
 `;
 
+const Main = styled.div`
+  padding: 3rem;
+`;
+
 function Layout({ children }) {
   return (
-    <Main>
+    <Wrapper>
       <title>addison staples</title>
       <Video playsinline muted autoPlay loop poster={e6poster} id="bgvid">
         <source src={e6webm} type="video/webm" />
         <source src={e6mp4} type="video/mp4" />
       </Video>
       <VideoOverlay />
-      {children}
-    </Main>
+
+      <Main>
+        {children}
+      </Main>
+    </Wrapper>
   );
 }
 
