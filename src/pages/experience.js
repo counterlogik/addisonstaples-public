@@ -1,6 +1,7 @@
 import * as React from "react";
 import styled from "styled-components";
 import { colors } from "../styles/variables";
+import { media } from "../styles/breakpoints";
 
 const ExperienceList = styled.ul`
   list-style: none;
@@ -14,6 +15,14 @@ const PageHeading = styled.h2`
   text-align: right;
   letter-spacing: 0.5rem;
   margin-bottom: 2rem;
+
+${media.small`
+  font-size: 2.5rem;
+`}
+
+${media.medium`
+  font-size: 3rem;
+`}
 `;
 
 const Role = styled.li`
