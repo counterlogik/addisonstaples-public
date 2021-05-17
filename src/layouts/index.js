@@ -6,6 +6,28 @@ import e6webm from "../assets/videos/eastsixth.webm";
 import { GlobalStyle } from "../styles/base";
 import { colors } from "../styles/variables";
 import { Link } from "gatsby";
+import { media } from "../styles/breakpoints";
+
+const MainHeading = styled.h1`
+  text-align: right;
+  font-size: 2rem;
+  color: ${colors.neutral};
+  box-sizing: content-box;
+  text-overflow: clip;
+  letter-spacing: 0.5rem;
+  text-shadow: -2px 0 1px ${colors.primary}, 2px 0 1px ${colors.secondary};
+  margin-bottom: 2rem;
+
+  ${media.small`
+    font-size: 2.5rem;
+    text-shadow: -2.5px 0 1px ${colors.primary}, 2.5px 0 1px ${colors.secondary};
+  `}
+
+  ${media.medium`
+    font-size: 3rem;
+    text-shadow: -3px 0 1px ${colors.primary}, 3px 0 1px ${colors.secondary};
+  `}
+`;
 
 const Video = styled.video.attrs({
   preload: 'auto',
@@ -75,7 +97,7 @@ const navItems = [
   { link: "https://www.linkedin.com/in/addisonstaples/", name: "linkedin", isExternal: true },
 ];
 
-function Layout({ children }) {
+function Layout({ path, children }) {
   return (
     <>
       <GlobalStyle />
@@ -101,6 +123,8 @@ function Layout({ children }) {
             )}
           </ul>
         </NavItems>
+        {path === "/" && <MainHeading>addison staples</MainHeading>}
+
         <Main>
           {children}
         </Main>
@@ -108,6 +132,6 @@ function Layout({ children }) {
   );
 }
 
-Layout.propTypes = { children: PropTypes.node.isRequired };
+Layout.propTypes = { path: PropTypes.string, children: PropTypes.node.isRequired };
 
 export default Layout;
