@@ -1,5 +1,6 @@
 import { createGlobalStyle } from "styled-components";
 import { media } from '../styles/breakpoints';
+import { colors } from "../styles/variables";
 
 export const GlobalStyle = createGlobalStyle`
   *,
@@ -11,19 +12,15 @@ export const GlobalStyle = createGlobalStyle`
   html {
     font-size: 12px;
 
-    ${media.phone`
+    ${media.medium`
       font-size: 16px;
     `}
 
-    ${media.tablet`
-      font-size: 18px;
-    `}
-
-    ${media.desktop`
+    ${media.large`
       font-size: 20px;
     `}
 
-    ${media.giant`
+    ${media.extraLarge`
       font-size: 24px;
     `}
   }
@@ -56,11 +53,17 @@ export const GlobalStyle = createGlobalStyle`
     text-rendering: optimizeSpeed;
     line-height: 1.5;
     font-family: "Dank Mono", "Roboto Mono", sans-serif, monospace;
+    color: ${colors.neutral};
   }
 
   ul[class],
   ol[class] {
     list-style: none;
+  }
+
+  a {
+    text-decoration: none;
+    color: ${colors.neutral};
   }
 
   a:not([class]) {

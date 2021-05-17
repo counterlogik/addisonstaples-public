@@ -49,11 +49,12 @@ const VideoOverlay = styled.div`
 `;
 
 const Main = styled.div`
-  padding: 2rem;
+  padding: 0 2rem;
 `;
 
 export const NavItems = styled.nav`
-  color: whitesmoke;
+  color: ${colors.neutral};
+  padding: 1.25rem 1rem;
 
   ul {
     list-style: none;
@@ -65,6 +66,7 @@ export const NavItems = styled.nav`
   a {
     text-decoration: none;
     color: ${colors.primary};
+    font-weight: 700;
 
     &.active {
       opacity: 0.5;
@@ -73,8 +75,8 @@ export const NavItems = styled.nav`
 `;
 
 export const NavItem = styled.li`
-  font-size: 1rem;
-  padding: 1.25rem 1rem;
+  font-size: 1.25rem;
+  padding: 0 1rem;
 `;
 
 

@@ -1,22 +1,33 @@
 import * as React from "react";
 import styled from "styled-components";
 import { colors } from "../styles/variables";
+import { media } from "../styles/breakpoints";
 
 const Header = styled.header`
   position: relative;
-  text-align: center;
+  text-align: right;
   display: flex;
   align-items: center;
   justify-content: flex-end;
 
   h1 {
-    font-size: 3.25rem;
-    color: whitesmoke;
+    font-size: 2rem;
+    color: ${colors.neutral};
     box-sizing: content-box;
     text-overflow: clip;
     letter-spacing: 0.5rem;
-    text-shadow: -3px 0 1px ${colors.primary}, 3px 0 1px ${colors.secondary};
+    text-shadow: -2px 0 1px ${colors.primary}, 2px 0 1px ${colors.secondary};
+    margin-bottom: 2rem;
+
+    ${media.medium`
+      font-size: 3rem;
+      text-shadow: -3px 0 1px ${colors.primary}, 3px 0 1px ${colors.secondary};
+    `}
   }
+`;
+
+const Blurb = styled.p`
+  margin-bottom: 1rem;
 `;
 
 const About = styled.div`
@@ -31,11 +42,11 @@ function IndexPage() {
         <h1>addison staples</h1>
       </Header>
       <About>
-        <p>Howdy, my name is Addison. I&apos;m a front end developer living in Austin, TX. I hold a math degree from the University of Texas (with a dash of computer science!).</p>
+        <Blurb>Howdy, my name is Addison. I&apos;m a front end developer living in Austin, TX. I hold a math degree from the University of Texas (with a dash of computer science!).</Blurb>
 
-        <p>I have been coding since age twelve when I started making websites for whatever Nintendo game I was obsessed with at the moment. I got my first paid dev gig in my twenties which ignited that childhood spark into a career.</p>
+        <Blurb>I have been coding since age twelve when I started making websites for whatever Nintendo game I was obsessed with at the moment. I got my first paid dev gig in my twenties which ignited that childhood spark into a career.</Blurb>
 
-        <p>Lately, I enjoy cooking yummy plant-based meals, cruising around near the lake on my bike, and learning about the world of backpacking. Sometimes, I dabble as a DJ (house and techno). I also tinker with computers and projectors for live visuals.</p>
+        <Blurb>I enjoy cooking tasty plant-based meals, cruising around near the lake on my bike, and learning about the world of backpacking. Sometimes, I dabble as a DJ (house and techno). I also tinker with computers and projectors for live visuals.</Blurb>
       </About>
     </>
   );
