@@ -8,17 +8,6 @@ import { GlobalStyle } from "../styles/base";
 import { colors } from "../styles/variables";
 import { Link } from "gatsby";
 
-const Wrapper = styled.div`
-  color: #232129;
-  background-color: black;
-  object-fit: cover;
-  width: 100vw;
-  height: 100vh;
-  top: 0;
-  left: 0;
-  position: fixed;
-`;
-
 const Video = styled.video.attrs({
   preload: 'auto',
   autoPlay: true,
@@ -31,7 +20,7 @@ const Video = styled.video.attrs({
   position: fixed;
   top: 0;
   left: 0;
-  opacity: 0.25;
+  opacity: 0.2;
   pointer-events: none;
 `;
 
@@ -91,7 +80,6 @@ function Layout({ children }) {
   return (
     <>
       <GlobalStyle />
-      <Wrapper>
         <title>addison staples</title>
         <Video poster={e6poster}>
           <source src={e6webm} type="video/webm" />
@@ -117,7 +105,6 @@ function Layout({ children }) {
         <Main>
           {children}
         </Main>
-      </Wrapper>
     </>
   );
 }

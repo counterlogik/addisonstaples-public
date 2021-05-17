@@ -64,7 +64,7 @@ const experiences = [
       "Trained client engineering teams on Angular/RxJS best practices and fully architected front end stacks for new projects",
     ],
     used: ["Angular", "RxJS", "React", "Node"],
-    description: "Developed modern web applications for medium to massive corporate clients and government orgs; mentored junior developers",
+    description: "Developed modern web applications for medium to massive corporate clients and government orgs; mentored jr devs",
   },
   {
     company: "PrimeLending",
@@ -80,7 +80,7 @@ const experiences = [
       "Serve as consultant for user interface and experience design for other teams throughout the company",
     ],
     used: ["AngularJS", "Angular", "Sass"],
-    description: "Refactored 200K+ user-base home loans application and dashboard",
+    description: "Refactored 200K+ user-base home loans application",
   },
   {
     company: "iPhotonix",
@@ -97,7 +97,7 @@ const experiences = [
       "Design and write custom D3-powered graph components for richly displaying real-time traffic data",
     ],
     used: ["D3", "jQuery", "Sass"],
-    description: "Built SVG-centric framework/UI for explorining networks",
+    description: "Built SVG-centric framework/UI for exploring networks",
   },
 ];
 

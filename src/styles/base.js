@@ -19,10 +19,6 @@ export const GlobalStyle = createGlobalStyle`
     ${media.large`
       font-size: 20px;
     `}
-
-    ${media.extraLarge`
-      font-size: 24px;
-    `}
   }
 
   ul[class],
@@ -54,6 +50,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     font-family: "Dank Mono", "Roboto Mono", sans-serif, monospace;
     color: ${colors.neutral};
+    background-color: ${colors.black};
   }
 
   ul[class],

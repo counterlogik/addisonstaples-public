@@ -19,6 +19,11 @@ const Header = styled.header`
     text-shadow: -2px 0 1px ${colors.primary}, 2px 0 1px ${colors.secondary};
     margin-bottom: 2rem;
 
+    ${media.small`
+      font-size: 2.5rem;
+      text-shadow: -2.5px 0 1px ${colors.primary}, 2.5px 0 1px ${colors.secondary};
+    `}
+
     ${media.medium`
       font-size: 3rem;
       text-shadow: -3px 0 1px ${colors.primary}, 3px 0 1px ${colors.secondary};
