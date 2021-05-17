@@ -1,7 +1,6 @@
 import * as React from "react";
 import PropTypes from "prop-types";
 import styled from "styled-components";
-import e6poster from "../assets/images/eastsixth.jpg";
 import e6mp4 from "../assets/videos/eastsixth.mp4";
 import e6webm from "../assets/videos/eastsixth.webm";
 import { GlobalStyle } from "../styles/base";
@@ -81,7 +80,7 @@ function Layout({ children }) {
     <>
       <GlobalStyle />
         <title>addison staples</title>
-        <Video poster={e6poster}>
+        <Video>
           <source src={e6webm} type="video/webm" />
           <source src={e6mp4} type="video/mp4" />
         </Video>

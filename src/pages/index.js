@@ -21,12 +21,12 @@ const Header = styled.header`
 
     ${media.small`
       font-size: 2.5rem;
-      text-shadow: -2.5px 0 1px ${colors.primary}, 2.5px 0 1px ${colors.secondary};
+      text-shadow: -2.5px 0 1px rgb(157,239,255), 2.5px 0 1px rgb(255,107,98);
     `}
 
     ${media.medium`
       font-size: 3rem;
-      text-shadow: -3px 0 1px ${colors.primary}, 3px 0 1px ${colors.secondary};
+      text-shadow: -3px 0 1px rgb(157,239,255), 3px 0 1px rgb(255,107,98);
     `}
   }
 `;
