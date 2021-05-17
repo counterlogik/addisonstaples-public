@@ -1,5 +1,4 @@
 import * as React from "react";
-import { Link } from "gatsby";
 import styled from "styled-components";
 
 const ExperienceList = styled.ul`
@@ -7,6 +6,16 @@ const ExperienceList = styled.ul`
   padding-left: 0;
   color: whitesmoke;
   font-family: "Roboto Mono", sans-serif, monospace;
+`;
+
+const PageHeading = styled.h2`
+  font-family: "Dank Mono", "Roboto Mono", sans-serif, monospace;
+  font-size: 2.25rem;
+  color: rgb(255,107,98);
+  box-sizing: content-box;
+  text-overflow: clip;
+  letter-spacing: 0.5rem;
+  /* text-shadow: -3px 0 1px rgb(157,239,255) , 3px 0 1px rgb(255,107,98); */
 `;
 
 const experiences = [
@@ -19,7 +28,7 @@ const experiences = [
       "Mentored junior developers (between 2-8 per project) on modern front-end technologies including React, Angular, Redux, RxJS, Git, and Azure",
       "Developed multi-pod initiative to integrate E2E testing into the solution with CucumberJS and Protractor while maintaining existing unit test suites using Jasmine",
       "Built latest React and Angular 8/9/10 front ends (both from scratch and inherited) through MVP projects, post MVP, and complete redesigns of existing applications",
-      "Converted existing linting configuration from TSLint to ESLint, and implemented code style enforcement via Prettier to improve developer efficiency on every team I was place on",
+      "Converted existing linting configuration from TSLint to ESLint, and implemented code style enforcement via Prettier to improve developer efficiency",
       "Trained client engineering teams on Angular/RxJS best practices and fully architected front end stacks for new projects",
     ],
   },
@@ -55,7 +64,7 @@ const experiences = [
 function ExperiencePage() {
   return (
     <>
-      <h2>recent experience</h2>
+      <PageHeading>recent experience</PageHeading>
       <ExperienceList>
         {experiences.map((experience, index) => (
           <li key={index}>
@@ -72,7 +81,6 @@ function ExperiencePage() {
           </li>
         ))}
       </ExperienceList>
-      <Link to="/">home</Link>
     </>
   );
 }

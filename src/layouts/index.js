@@ -4,6 +4,7 @@ import styled from "styled-components";
 import e6poster from "../assets/images/eastsixth.jpg";
 import e6mp4 from "../assets/videos/eastsixth.mp4";
 import e6webm from "../assets/videos/eastsixth.webm";
+import { Link } from "gatsby";
 
 const Wrapper = styled.div`
   color: #232129;
@@ -16,7 +17,12 @@ const Wrapper = styled.div`
   position: fixed;
 `;
 
-const Video = styled.video`
+const Video = styled.video.attrs({
+  preload: 'auto',
+  autoPlay: true,
+  loop: true,
+  muted: true,
+})`
   object-fit: cover;
   width: 100vw;
   height: 100vh;
@@ -36,24 +42,71 @@ const VideoOverlay = styled.div`
   left: 0;
   opacity: 0.05;
   background-color: #c73e1d;
-  background-image: linear-gradient(315deg, #c73e1d 0%, #a23b72 37%, #2e86ab 100%);
+  background-image: linear-gradient(315deg, rgb(157,239,255) 0%, whitesmoke 37%, rgb(255,107,98) 100%);
   pointer-events: none;
 `;
 
-const Main = styled.div`
-  padding: 3rem;
+const Navigation = styled.nav`
+  font-family: "Roboto Mono", sans-serif, monospace;
+  color: whitesmoke;
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+  }
+
+  a {
+    text-decoration: none;
+    color: rgb(157,239,255);
+
+    &[aria-current] {
+      opacity: 0.5;
+    }
+  }
 `;
 
-function Layout({ children }) {
+const NavLink = styled.li`
+font-size: 1rem;
+      padding: 1.25rem 1rem;
+`;
+
+const Main = styled.div`
+  padding: 0 1rem;
+`;
+
+const navItems = [
+  { link: "/", name: "home" },
+  { link: "/experience", name: "experience" },
+  { link: "https://github.com/counterlogik", name: "github", isExternal: true },
+  { link: "https://www.linkedin.com/in/addisonstaples/", name: "linkedin", isExternal: true },
+];
+
+function Layout({ path, children }) {
   return (
     <Wrapper>
       <title>addison staples</title>
-      <Video playsinline muted autoPlay loop poster={e6poster} id="bgvid">
+      <Video poster={e6poster}>
         <source src={e6webm} type="video/webm" />
         <source src={e6mp4} type="video/mp4" />
       </Video>
       <VideoOverlay />
 
+      <Navigation>
+        <ul>
+          {navItems.map(navItem =>
+            <NavLink key={navItem.name}>
+              {!navItem?.isExternal ?(
+                <Link to={navItem.link} aria-current={path === navItem.link ? true : undefined}>{navItem.name}</Link>
+               ) :(
+                <a href={navItem.link}>{navItem.name}</a>
+               )
+              }
+            </NavLink>
+          )}
+        </ul>
+      </Navigation>
       <Main>
         {children}
       </Main>
@@ -61,6 +114,6 @@ function Layout({ children }) {
   );
 }
 
-Layout.propTypes = { children: PropTypes.node.isRequired };
+Layout.propTypes = { path: PropTypes.string, children: PropTypes.node.isRequired };
 
 export default Layout;
