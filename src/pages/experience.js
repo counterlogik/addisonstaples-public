@@ -1,21 +1,17 @@
 import * as React from "react";
 import styled from "styled-components";
+import { colors } from "../styles/variables";
 
 const ExperienceList = styled.ul`
   list-style: none;
   padding-left: 0;
-  color: whitesmoke;
-  font-family: "Roboto Mono", sans-serif, monospace;
+  color: ${colors.neutral};
 `;
 
 const PageHeading = styled.h2`
-  font-family: "Dank Mono", "Roboto Mono", sans-serif, monospace;
   font-size: 2.25rem;
-  color: rgb(255,107,98);
-  box-sizing: content-box;
-  text-overflow: clip;
+  color: ${colors.secondary};
   letter-spacing: 0.5rem;
-  /* text-shadow: -3px 0 1px rgb(157,239,255) , 3px 0 1px rgb(255,107,98); */
 `;
 
 const experiences = [

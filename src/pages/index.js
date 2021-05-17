@@ -1,5 +1,6 @@
 import * as React from "react";
 import styled from "styled-components";
+import { colors } from "../styles/variables";
 
 const Header = styled.header`
   position: relative;
@@ -9,20 +10,18 @@ const Header = styled.header`
   justify-content: flex-end;
 
   h1 {
-    font-family: "Dank Mono", "Roboto Mono", sans-serif, monospace;
     font-size: 3.25rem;
     color: whitesmoke;
     box-sizing: content-box;
     text-overflow: clip;
     letter-spacing: 0.5rem;
-    text-shadow: -3px 0 1px rgb(157,239,255) , 3px 0 1px rgb(255,107,98) ;
+    text-shadow: -3px 0 1px ${colors.primary}, 3px 0 1px ${colors.secondary};
   }
 `;
 
 const About = styled.div`
   color: whitesmoke;
   font-size: 1.5rem;
-  font-family: "Dank Mono", "Roboto Mono", sans-serif, monospace;
 `;
 
 function IndexPage() {
